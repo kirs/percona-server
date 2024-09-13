@@ -5354,6 +5354,7 @@ rec_loop:
         break;
       case DB_SKIP_LOCKED:
         if (prebuilt->select_mode == SELECT_SKIP_LOCKED) {
+          printf("detected locked record; skipping\n");
           goto next_rec;
         }
         DEBUG_SYNC_C("semi_consistent_read_would_wait");
